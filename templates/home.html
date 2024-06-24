@@ -1,48 +1,71 @@
 <!DOCTYPE html>
-<html >
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+    <title>ML API</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
-  
+    <style type="text/css">
+        .button {
+            background: #3A68A1;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            height:23px;
+        }
+
+        .link_button2 {
+            border: solid 1px #1A4575;
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+            background: #3A68A1;
+            color: white;
+        }
+        .row {
+            text-align: center;
+            margin-left: 10px;
+            margin-top: 10px;
+            margin-right: 750px;
+        }
+    </style>
 </head>
 
 <body>
- <div class="login">
-	<h1>Boston House Price Prediction</h1>
+    <div class="login">
+        <h1>Boston House Price Prediction</h1>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-      <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
-    	<input type="text" name="ZN" placeholder="ZN" required="required" /><br>
-        <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
-        <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
-        <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
-        <input type="text" name="RM" placeholder="RM" required="required" /><br>
-        <input type="text" name="Age" placeholder="Age" required="required" /><br>
-        <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
-        <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
-        <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
-        <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
-        <input type="text" name="B" placeholder="B" required="required" /><br>
-        <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <input type="text" name="CRIM" placeholder="CRIM" required="required" /><br>
+            <input type="text" name="ZN" placeholder="ZN" required="required" /><br>
+            <input type="text" name="INDUS" placeholder="INDUS" required="required" /><br>
+            <input type="text" name="CHAS" placeholder="CHAS" required="required" /><br>
+            <input type="text" name="NOX" placeholder="NOX" required="required" /><br>
+            <input type="text" name="RM" placeholder="RM" required="required" /><br>
+            <input type="text" name="Age" placeholder="Age" required="required" /><br>
+            <input type="text" name="DIS" placeholder="DIS" required="required" /><br>
+            <input type="text" name="RAD" placeholder="RAD" required="required" /><br>
+            <input type="text" name="TAX" placeholder="TAX" required="required" /><br>
+            <input type="text" name="PTRATIO" placeholder="PTRATIO" required="required" /><br>
+            <input type="text" name="B" placeholder="B" required="required" /><br>
+            <input type="text" name="LSTAT" placeholder="LSTAT" required="required" /><br>
 
-       
+            <div class="row">
+                <button type="submit" class="button">Predict</button>
+                <a class="link_button2" href="https://angular-website-machine-learning-api.onrender.com/">Back To Home</a>
+            </div>
+        </form>
 
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-    </form>
+        <br>
+        <br>
 
-   <br>
-   <br>
-  
-   
- </div>
- {{prediction_text}}
+
+    </div>
+    {{prediction_text}}
 
 </body>
 </html>
